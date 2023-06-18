@@ -7,91 +7,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Login</title>
     <style>
-        .container2 {
+          .container2 {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f2f2f2;
         }
-        
+
         .login-section,
         .registration-section {
             background-color: #4ed9d6;
-            padding: 2rem;
+            padding: 1rem;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 350px; /* Adjust the width as needed */
         }
-        
+
         .login-section h2,
         .registration-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .form-group {
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
             text-align: left;
         }
-        
+
         .form-group label {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
-        
-        .form-group input {
+
+        .form-group input,
+        .form-group select {
             width: 100%;
-            padding: 0.5rem;
-            font-size: 1.5rem;
-            border-radius: 5px;
+            padding: 0.3rem;
+            font-size: 1.3rem;
+            border-radius: 3px;
             border: 1px solid #ccc;
         }
-        
+
         .checkbox {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
-        
+
         .checkbox label {
-            font-size: 1.5rem;
-            margin-left: 0.5rem;
+            font-size: 1.3rem;
+            margin-left: 0.3rem;
         }
-        
+
         .btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
-            font-size: 1.5rem;
-            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            font-size: 1.3rem;
+            border-radius: 3px;
             background-color: #27ae60;
             color: #fff;
             border: none;
             cursor: pointer;
         }
-        
+
         .btn:hover {
             background-color: #219653;
         }
-        
+
         p a {
             color: #27ae60;
             text-decoration: underline;
         }
-        
+
         .back-button {
             position: absolute;
             top: 10px;
             left: 10px;
-            padding: 0.5rem 1rem;
-            font-size: 1.5rem;
+            padding: 0.3rem 0.6rem;
+            font-size: 1.3rem;
             background-color: #27ae60;
             color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             cursor: pointer;
         }
-
+ 
     </style>
 
 </head>
