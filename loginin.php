@@ -17,7 +17,7 @@
         
         .login-section,
         .registration-section {
-            background-color: #9fe8e7;
+            background-color: #4ed9d6;
             padding: 2rem;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -79,8 +79,6 @@
             text-decoration: underline;
         }
         
-     
-
         .back-button {
             position: absolute;
             top: 10px;
@@ -109,8 +107,8 @@
             <h2>Login</h2>
             <form action="login.php" method="POST" id="login-form">
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
@@ -120,6 +118,12 @@
                     <input type="checkbox" name="" id="remember-me">
                     <label for="remember-me"> remember me</label>
                 </div>
+                <?php
+                if (isset($_GET['error'])) {
+                $errorMsg = $_GET['error'];
+                echo '<p class="error-message">' . $errorMsg . '</p>';
+                }
+                ?>
                 <button type="submit" class="btn">Login</button>
 
                 <p>forget password ? <a href="#">click here</a></p>
@@ -184,7 +188,7 @@
 
     <script>
          function goBack() {
-            window.location.href = "index.html";
+            window.location.href = "index.php";
         }
         // JavaScript code to handle form display
         const createAccountLink = document.getElementById('create-account-link');

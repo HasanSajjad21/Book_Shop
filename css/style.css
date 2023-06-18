@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
 :root{
-    --green:#27ae60;
+    --green:#28af8d;
     --dark-color:#219150;
     --black:#444;
     --light-color:#666;
@@ -110,7 +110,7 @@ section{
     height:5rem;
     border:var(--border);
     overflow: hidden;
-    background:#fff;
+    background:#28af8d;
     display:flex;
     align-items: center;
     border-radius: .5rem;
@@ -169,7 +169,7 @@ section{
 }
 
 .header .header-2 .navbar a:hover{
-    background:var(--dark-color);
+    background:var(--light-color);
 }
 
 .header .header-2.active{
@@ -190,7 +190,7 @@ section{
     .bottom-navbar {
       display: flex;
       justify-content: space-around;
-      background-color: var(--green);
+      background-color: var(--light-color);
       position: fixed;
       bottom: 0;
       width: 100%;
@@ -201,6 +201,7 @@ section{
       color: white;
       text-decoration: none;
       padding: 10px;
+      font-size: 20px;
     }
   
     .bottom-navbar a i {
@@ -208,7 +209,7 @@ section{
     }
   
     .bottom-navbar a:hover {
-      color: #27ae60;
+      color: #28af8d;
     }
   }
   
@@ -224,3 +225,151 @@ section{
 
 /* Rest of your CSS styles */
 
+
+
+section .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 10%;
+  }
+  
+  /* Update for responsiveness */
+  @media (max-width: 768px) {
+    section .main {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  section .main h1 {
+    position: relative;
+    font-size: 55px;
+    top: 80px;
+    left: 25px;
+  }
+  
+  /* Update for responsiveness */
+  @media (max-width: 768px) {
+    section .main h1 {
+      font-size: 40px;
+      top: 0;
+      left: 0;
+      margin-top: 20px;
+    }
+  }
+  
+  section .main h1 span {
+    color: #089da1;
+  }
+  
+  section .main p {
+    width: 650px;
+    text-align: justify;
+    line-height: 22px;
+    position: relative;
+    top: 125px;
+    left: 25px;
+  }
+  
+  /* Update for responsiveness */
+  @media (max-width: 768px) {
+    section .main p {
+      width: 100%;
+      top: 0;
+      left: 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  section .main .main_tag .main_btn {
+    background: #08a192;
+    padding: 10px 20px;
+    position: relative;
+    top: 200px;
+    left: 25px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 1;
+  }
+  
+  /* Update for responsiveness */
+  @media (max-width: 768px) {
+    section .main .main_tag .main_btn {
+      top: 0;
+      left: 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  section .main .main_img img {
+    width: 780px;
+    position: relative;
+    top: 90px;
+    left: 20px;
+  }
+  
+  /* Update for responsiveness */
+  @media (max-width: 768px) {
+    section .main .main_img img {
+      width: 100%;
+      top: 0;
+      left: 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  
+
+
+
+
+/*container*/
+
+.container {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    background-color: #08a192;
+    border-radius: 15px;
+  }
+  
+  .category-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+  }
+
+
+  
+
+  .category-item img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    /*scroll-padding-top: 0;*/
+  }
+  .category-item h3 {
+    margin-top: 10px;
+    color: aliceblue;
+  }
+  
+  @media (max-width: 768px) {
+    .category-item {
+      width: 40%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .category-item {
+      width: 80%;
+    }
+  }
+  
