@@ -284,16 +284,7 @@ section .main {
     }
   }
   
-  section .main .main_tag .main_btn {
-    background: #08a192;
-    padding: 10px 20px;
-    position: relative;
-    top: 200px;
-    left: 25px;
-    color: #fff;
-    text-decoration: none;
-    z-index: 1;
-  }
+
   
   /* Update for responsiveness */
   @media (max-width: 768px) {
