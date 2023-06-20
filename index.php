@@ -14,11 +14,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
     <title>Document</title>
 
     <style>
+ 
        /* Add this CSS code to your style.css file */
 
        section .main .main_tag .main_btn {
@@ -43,6 +45,8 @@
 .user-box p {
   margin: 5px 0;
 }
+
+
 /* Best Books Section */
 .best-books-section {
   margin-top: 40px;
@@ -108,7 +112,11 @@
 
 
 
-
+.videoh1{
+  text-align: center;
+    font-size: 50px;
+    margin-top: 55px;
+}
 
 
 .video-wrapper {
@@ -116,6 +124,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 
 .video-container {
   flex-basis: 20%;
@@ -137,13 +146,91 @@
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*reviews*/
+
+/*reviews*/
+
+.reviews {
+  width: 100%;
+  height: auto;
+}
+
+.reviews h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 3.125rem;
+}
+
+.reviews .review_box {
+  width: 95%;
+  height: auto;
+  margin: 1.25rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reviews .review_box .review_card {
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 8px #425f60;
+  padding: 1.25rem;
+  margin: 0.625rem;
+}
+
+.reviews .review_box .review_card i {
+  float: right;
+  font-size: 5rem;
+  position: relative;
+  bottom: 1.25rem;
+  color: #eaeaea;
+}
+
+.reviews .review_box .review_card .card_top img {
+  width: 2.5rem;
+  border-radius: 50%;
+  margin-bottom: 0.625rem;
+}
+
+.reviews .review_box .review_card .card p {
+  margin: 0.625rem 0 0.625rem 0;
+  text-align: justify;
+  line-height: 1.375rem;
+}
+
+.reviews .review_box .review_card .card .review_icon i {
+  font-size: 1rem;
+  float: left;
+  margin-top: 1.25rem;
+  color: #089da1;
+  padding: 0 1px;
+}
+
 /*Footer suru koresi colcor= #08a192 */
 
 
 
 footer{
   width: 100%;
-  background: #eaeaea;
+  background: #96bfc8;
 }
 
 footer .footer_main{
@@ -209,7 +296,7 @@ footer .footer_main .tag .search_bar input{
 
 footer .footer_main .tag .search_bar button{
   padding: 7px 15px;
-  background: #089da1;
+  background: #0a900e;
   border: none;
   margin-top: 15px;
   border-radius: 25px;
@@ -226,7 +313,7 @@ footer .end{
 }
 
 footer .end span{
-  color: #089da1;
+  color: #9e2c02;
   margin-left: 10px;
 }
 
@@ -284,7 +371,10 @@ footer .end span{
 <div class="header-2">
     <nav class="navbar">
         <a href="#home">home</a>
-        <a href="#categories" onclick="scrollToSection('best-books-section')">categories</a>
+        <a href="#categories">categories</a>
+        <a href="#video-review">video</a>
+        <a href="#cusrivo">Review</a>
+        <a href="#footore">About</a>
     </nav>
 </div>
 
@@ -292,7 +382,7 @@ footer .end span{
     <footer class="footer">
         <nav class="bottom-navbar">
             <a href="#banner-section"><i class="fas fa-home"></i> Home</a>
-            <a href="#categories" onclick="scrollToSection('best-books-section')">categories</a>
+            <a href="#categories">categories</a>
             <a href="#featured"><i class="fas fa-star"></i> Featured</a>
             <a href="#arrivals"><i class="fas fa-clipboard"></i> Arrivals</a>
             <a href="#blogs"><i class="fas fa-blog"></i> Blogs</a>
@@ -325,11 +415,12 @@ footer .end span{
 
 
     <!--catagori suru korlam-->
+  
 
 
     <section id="categories">
         <div class="container">
-            <h2>Categories</h2>
+        <h2 style="font-size: 28px">Categories</h2>
             <div class="category-slider">
 
                 <div class="category-item">
@@ -449,7 +540,7 @@ footer .end span{
 
 <section id="video-review">
 
-  <h2 style="font-size: 28px" >Video Review</h2>
+  <h1 class="videoh1" >Video Review</h1>
 
   <div class="video-wrapper">
     <div class="video-container">
@@ -475,16 +566,114 @@ footer .end span{
 </section>
 
 
+
+
+
+
+
+
+    <!--reviews-->
+
+    <div class="reviews" id="cusrivo">
+        <h1>Customers Review</h1>
+
+        <div class="review_box">
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_1.png">
+                </div>
+                <div class="card">
+                    <h2>Zahid Hasan</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eos doloribus iure 
+                       
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_2.png">
+                </div>
+                <div class="card">
+                    <h2>sadia Arin</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eos doloribus iure 
+                        dis
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_3.png">
+                </div>
+                <div class="card">
+                    <h2>Rezaul karim</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eos doloribus iure 
+                        distinctio!  
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review_card">
+                <i class="fa-solid fa-quote-right"></i>
+                <div class="card_top">
+                    <img src="image/review_4.png">
+                </div>
+                <div class="card">
+                    <h2>Zarin Tasnim</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus eos doloribus iure 
+                        distinctio!
+                    </p>
+                    <div class="review_icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
 <!--Fotter-->
 
 
 
-<section>
+<section id="footore">
           <footer>
         <div class="footer_main">
 
             <div class="tag">
-                <img src="image/Screenshot 2023-06-19 115255.png">
+                <img src="image/Screenshot_2023-06-19_115255-removebg-preview.png">
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quaerat ipsa aspernatur ad 
                     sequi, dolore eveniet vitae quasi. Excepturi ipsa odio impedit sequi at hic velit, minus 

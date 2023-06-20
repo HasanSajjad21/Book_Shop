@@ -12,22 +12,28 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f2f2f2;
+            background-color: #9c8f8f;
+            background-image: url(image/bg\ cover.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
         }
 
         .login-section,
         .registration-section {
-            background-color: #4ed9d6;
+            
+            background-color: transparent;
             padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            
+            box-shadow: 0 0 45px rgba(0, 0, 0, 0.9);
             text-align: center;
             width: 350px; /* Adjust the width as needed */
         }
 
         .login-section h2,
         .registration-section h2 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
@@ -37,7 +43,7 @@
         }
 
         .form-group label {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
 
         .form-group input,
@@ -47,6 +53,7 @@
             font-size: 1.3rem;
             border-radius: 3px;
             border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         .checkbox {
@@ -65,19 +72,19 @@
             display: inline-block;
             padding: 0.5rem 1rem;
             font-size: 1.3rem;
-            border-radius: 3px;
-            background-color: #27ae60;
+            border-radius: 10px;
+            background-color: #059a43;
             color: #fff;
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #219653;
+            background-color: #010503;
         }
 
         p a {
-            color: #27ae60;
+            color: #af3907;
             text-decoration: underline;
         }
 
@@ -86,11 +93,11 @@
             top: 10px;
             left: 10px;
             padding: 0.3rem 0.6rem;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             background-color: #27ae60;
             color: #fff;
             border: none;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
         }
  
