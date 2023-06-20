@@ -21,7 +21,7 @@
 
     <style>
  
-       /* Add this CSS code to your style.css file */
+       
 
        section .main .main_tag .main_btn {
     background: #08a192;
@@ -39,7 +39,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
   display: none;
-  z-index: 9999; /* Ensure the popup is on top of other elements */
+  z-index: 9999; /* pop upure je gese tar jonno ata ad korsi*/
 }
 
 .user-box p {
@@ -47,7 +47,7 @@
 }
 
 
-/* Best Books Section */
+/* Best Books Section start koresi */
 .best-books-section {
   margin-top: 40px;
 }
@@ -431,8 +431,6 @@ footer .end span{
                     <img src="cat-img/most.jpg" alt="Category 2">
                     <h3>Most Popular</h3>
                 </div>
-                <!-- Add more category items as needed -->
-              
                 <div class="category-item">
                     <img src="cat-img/art.jpg" alt="Category 4">
                     <h3>Art</h3>
@@ -495,13 +493,13 @@ footer .end span{
   <?php
   include 'connect.php';
 
-  $categories = array("Most Popular", "Religious", "Fiction", "Romantic", "Sci-Fi", "Children"); // Example categories
+  $categories = array("Most Popular", "Religious", "Fiction", "Romantic", "Sci-Fi", "Children"); //  categories
 
   foreach ($categories as $category) {
     echo '<div class="category-books">';
     echo '<h2 class="category-title">' . $category . '</h2>';
 
-    $query = "SELECT * FROM books WHERE category = '$category' LIMIT 6"; // Retrieve 5 books per category
+    $query = "SELECT * FROM books WHERE category = '$category' LIMIT 6"; // Retrieve 5 books per category 
     $result = mysqli_query($conn, $query);
 
     echo '<div class="best-books-grid">';
@@ -685,11 +683,9 @@ footer .end span{
             <div class="tag">
                 <h1>Quick Link</h1>
                 <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Featured</a>
-                <a href="#">Arrivals</a>
-                <a href="#">Reviews</a>
-                <a href="#">Blog</a>
+                <a href="#footore">About</a>
+                <a href="#cusrivo">Reviews</a>
+                <a href="#video-review">Video</a>
                 
             </div>
 

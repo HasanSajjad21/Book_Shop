@@ -1,13 +1,12 @@
 <?php
 include("connect.php");
 
-// Check if form is submitted for deleting items
-// Check if form is submitted for deleting items
+
 if (isset($_POST['delete-items'])) {
   if (isset($_POST['selected-items'])) {
     $selectedItems = $_POST['selected-items'];
 
-    // Convert the selected items array into a string of comma-separated values
+    // Convert the selected items arry
     $selectedItemsString = implode(',', $selectedItems);
 
     // Delete selected items from the cart table
@@ -17,13 +16,13 @@ if (isset($_POST['delete-items'])) {
 }
 
 
-// Rest of the code...
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>My Shopping Cart</title>
-  <!-- Add your CSS stylesheets and JavaScript files -->
+  
   <link rel="stylesheet" href="css/cart.css">
   <style>
     .shopping-cart-table {
@@ -70,7 +69,7 @@ if (isset($_POST['delete-items'])) {
         if (isset($_GET['id'])) {
           $selectedBookId = $_GET['id'];
 
-          // Check if the selected book is already in the cart
+          
           $query = "SELECT * FROM cart WHERE book_id = '$selectedBookId'";
           $result = $conn->query($query);
 
@@ -85,7 +84,7 @@ if (isset($_POST['delete-items'])) {
           }
         }
 
-        // Fetch books from the cart
+        
         $sql = "SELECT cart.id, books.image, books.title, books.price, cart.quantity FROM cart INNER JOIN books ON cart.book_id = books.id";
         $result = $conn->query($sql);
 

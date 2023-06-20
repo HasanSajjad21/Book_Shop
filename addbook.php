@@ -80,7 +80,7 @@
 </head>
 <body>
     <header>
-        <!-- Your header content here -->
+        <!--tor header contract akhane hobe -->
     </header>
 
     <main>
@@ -90,7 +90,7 @@
                 session_start();
                 include 'connect.php';
                 
-                // Array of categories
+                // Array  categories
                 $categories = array("Most Popular", "Religious", "Fiction", "Romantic", "Sci-Fi", "Children");
                 
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -105,13 +105,13 @@
                     $target_directory = 'book_images/';
                     $target_file = $target_directory . $image;
 
-                    // Move the uploaded image to the target directory
+                    // Move target directory
                     move_uploaded_file($image_temp, $target_file);
 
                     $query = "INSERT INTO books (title, author, image, category, price, featured) VALUES ('$title', '$author', '$target_file', '$category','$price', $featured)";
                     mysqli_query($conn, $query);
 
-                    // Redirect back to the index page or display a success message
+                    
                     header("Location: index.php");
                     exit();
                 }
@@ -127,7 +127,7 @@
                 <label for="category">Category:</label>
                 <select id="category" name="category" required>
                     <?php
-                        // Loop through categories and create options
+                        
                         foreach ($categories as $category) {
                             echo "<option value='$category'>$category</option>";
                         }
@@ -151,7 +151,7 @@
             <div id="success-message" class="success-message" style="display: none;">Book added successfully!</div>
         </section>
 
-        <!-- Other sections and content of your website -->
+        <!-- Other sections  -->
     </main>
 
     <section>
@@ -213,9 +213,9 @@
     </footer>
 </section>
     <script>
-        // JavaScript for displaying success message after form submission
+        //  displaying success message after form submission
         document.getElementById("add-book-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault(); 
             
             // Show success message
             var successMessage = document.getElementById("success-message");

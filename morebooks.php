@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    /* CSS styles for the morebooks.php page */
+    
     body {
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
@@ -182,14 +182,11 @@ $result = mysqli_query($conn, $query);
 <script>
   // JavaScript code for the morebooks.php page
 
-  // Smooth scrolling when clicking on the "Add to Cart" button
+  // Smooth scrolling 
   var addToCartButtons = document.querySelectorAll('.add-to-cart-button');
   addToCartButtons.forEach(function(button) {
     button.addEventListener('click', function(event) {
-      // The default behavior of the button is not prevented
-      // The button will navigate to the shopping_cart.php page
-      // The href attribute of the button contains the URL to navigate to
-      // You can directly set the window location to the href value
+     
       window.location.href = button.getAttribute('href');
     });
   });
