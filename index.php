@@ -218,7 +218,7 @@ footer .end span{
     <div class="icons">
         <div id="search-btn" class="fas fa-search"></div>
         <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-shopping-cart" onclick="shoppingCart()"></a>
         <?php 
         
     if (isset($_SESSION['email'])) {
@@ -239,7 +239,11 @@ footer .end span{
         <p>email : <span><?php echo $_SESSION['email']; ?></span></p>
         <p>phone number : <span><?php echo $_SESSION['phone_number']; ?></span></p>
     </div>
-
+    <script>
+      function shoppingCart() {
+      window.location.href = "shopping_cart.php";
+    }
+    </script>
         
 
     </div>
