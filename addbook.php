@@ -103,7 +103,7 @@
                     // Move the uploaded image to the target directory
                     move_uploaded_file($image_temp, $target_file);
 
-                    $query = "INSERT INTO books (title, author, image, category, featured) VALUES ('$title', '$author', '$target_file', '$category', $featured)";
+                    $query = "INSERT INTO books (title, author, image, category, price, featured) VALUES ('$title', '$author', '$target_file', '$category','$price', $featured)";
                     mysqli_query($conn, $query);
 
                     // Redirect back to the index page or display a success message
