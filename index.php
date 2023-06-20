@@ -261,7 +261,7 @@ footer .end span{
     <footer class="footer">
         <nav class="bottom-navbar">
             <a href="#banner-section"><i class="fas fa-home"></i> Home</a>
-            <a href="#categories"><i class="fas fa-list"></i> Categories</a>
+            <a href="#categories" onclick="scrollToSection('best-books-section')">categories</a>
             <a href="#featured"><i class="fas fa-star"></i> Featured</a>
             <a href="#arrivals"><i class="fas fa-clipboard"></i> Arrivals</a>
             <a href="#blogs"><i class="fas fa-blog"></i> Blogs</a>
@@ -475,10 +475,17 @@ footer .end span{
 </section>
 
 
+<script>
+  function scrollToSection(sectionId) {
+    // Get the target section element
+    const section = document.querySelector(sectionId);
 
+    // Scroll to the section smoothly
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
 
     <script src="script.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
