@@ -2,28 +2,44 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
+  background-color: #ffffff;
 }
 
 h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
   text-align: center;
+  background-color: #0E2954;
+  color: #ffffff;
 }
 
-#order-details {
-  margin-bottom: 20px;
+.hello {
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: #1F6E8C;
+  color: #ffffff;
 }
 
 form {
-  max-width: 400px;
+  max-width: 700px;
   margin: 0 auto;
+  border: 2px solid;
+  background-color: #9BCDD2;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 2.5%;
 }
 
 form div {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 label {
   display: block;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 input[type="text"],
@@ -31,54 +47,92 @@ input[type="email"],
 input[type="tel"] {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #2e0707;
   border-radius: 4px;
 }
 
-.product-details {
-  margin-bottom: 20px;
-}
-
-.product-details table {
-  width: 100%;
-}
-
-.product-details table td {
-  padding: 5px;
-}
-
-.product-details .product-image {
-  max-width: 100px;
-  height: auto;
-}
-
-.product-details .product-name {
-  font-weight: bold;
-}
-
-.user-details {
-  margin-top: 20px;
-}
-
-.user-details table {
-  width: 100%;
-}
-
-.user-details table td {
-  padding: 5px;
+input[type="radio"] {
+  margin-right: 5px;
 }
 
 button[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
   background-color: #4CAF50;
-  color: #fff;
+  color: white;
+  padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-button[type="submit"]:hover {
-  background-color: #45a049;
+button[type="cancle"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
+
+#cancel-button{
+  background-color: orangered;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 480px) {
+  form {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
+}
+
+
+#order-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-item {
+  width: 300px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 10px;
+}
+
+.product-name {
+  margin-bottom: 5px;
+}
+
+.total-amount {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+
+
+/* CSS styles for the payment method section */
+

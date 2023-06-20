@@ -15,32 +15,85 @@
     <!-- Display the selected product details and total amount here -->
   </div>
 
-  <h2>User Details</h2>
+  <h2 class="hello">User Details</h2>
   <form id="user-details-form">
     <div>
       <label for="username">User Name:</label>
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" name="username" placeholder="Enter you name" required>
     </div>
     <div>
       <label for="location">Location:</label>
-      <input type="text" id="location" name="location" required>
+      <input type="text" id="location" name="location" placeholder="Enter your password" required>
     </div>
     <div>
       <label for="present-address">Present Address:</label>
-      <input type="text" id="present-address" name="present-address" required>
+      <input type="text" id="present-address" name="present-address" placeholder="Enter your address" required>
     </div>
     <div>
       <label for="country">Country:</label>
-      <input type="text" id="country" name="country" required>
+      <input type="text" id="country" name="country" placeholder="select your country" required>
     </div>
     <div>
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" placeholder="Enter your valide Email" required>
     </div>
     <div>
       <label for="phone-number">Phone Number:</label>
-      <input type="tel" id="phone-number" name="phone-number" required>
+      <input type="tel" id="phone-number" name="phone-number" placeholder="Enter your valide phone number" required>
     </div>
+
+    <h2 class="hello">Payment Method</h2>
+    <div>
+      <input type="radio" id="cash-on-delivery" name="payment-method" value="cash" required>
+      <label for="cash-on-delivery"> Cash on Delivery</label>
+    </div>
+    <div id="cash-on-delivery-details">
+      <p>Please keep the exact cash ready for the delivery person.</p>
+    </div>
+    <div>
+      <input type="radio" id="mobile-payment" name="payment-method" value="mobile" required>
+      <label for="mobile-payment">Mobile Payment</label>
+    </div>
+    <div id="mobile-payment-details">
+      <label for="mobile-payment-provider">Select Mobile Payment Provider:</label>
+      <select id="mobile-payment-provider" name="mobile-payment-provider">
+        <option value="bkash">bKash</option>
+        <option value="nagad">Nagad</option>
+        <option value="rocket">Rocket</option>
+      </select>
+      <br>
+      <label for="mobile-payment-number">Mobile Payment Number:</label>
+      <input type="text" id="mobile-payment-number" name="mobile-payment-number" placeholder="Enter your mobile payment number">
+    </div>
+    <div>
+      <input type="radio" id="online-banking" name="payment-method" value="online" required>
+      <label for="online-banking">Online Banking</label>
+    </div>
+
+
+
+
+
+    <div id="online-banking-details">
+      <label for="bank-name">Select Bank:</label>
+      <select id="bank-name" name="bank-name">
+        <option value="bank-a">Bank A</option>
+        <option value="bank-b">Bank B</option>
+        <option value="bank-c">Bank C</option>
+      </select>
+      <br>
+      <label for="online-banking-username">Username:</label>
+      <input type="text" id="online-banking-username" name="online-banking-username" placeholder="Enter your online banking username">
+      <br>
+      <label for="online-banking-password">Password:</label>
+      <input type="password" id="online-banking-password" name="online-banking-password" placeholder="Enter your online banking password">
+    </div>
+
+    
+    
+
+    <a href="#" id="cancel-button">Cancel</a>
+
     <button type="submit" id="payment-button">Make Payment</button>
   </form>
 
