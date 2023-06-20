@@ -395,40 +395,47 @@ footer .end span{
                 ?>
             </div>
         </section>
+
+
+
+
+
+        
         <section class="best-books-section">
-    <?php
-    include 'connect.php';
+  <?php
+  include 'connect.php';
 
-    $categories = array("Most Popular", "Religious", "Fiction", "Romantic", "Sci-Fi", "Children"); // Example categories
+  $categories = array("Most Popular", "Religious", "Fiction", "Romantic", "Sci-Fi", "Children"); // Example categories
 
-    foreach ($categories as $category) {
-        echo '<div class="category-books">';
-        echo '<h2 class="category-title">' . $category . '</h2>';
+  foreach ($categories as $category) {
+    echo '<div class="category-books">';
+    echo '<h2 class="category-title">' . $category . '</h2>';
 
-        $query = "SELECT * FROM books WHERE category = '$category' LIMIT 6"; // Retrieve 5 books per category
-        $result = mysqli_query($conn, $query);
+    $query = "SELECT * FROM books WHERE category = '$category' LIMIT 6"; // Retrieve 5 books per category
+    $result = mysqli_query($conn, $query);
 
-        echo '<div class="best-books-grid">';
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<div class="book-item">';
-            echo '<img src="' . $row['image'] . '" alt="' . $row['title'] . '">';
-            echo '<h3 class="book-title">' . $row['title'] . '</h3>';
-            echo '<p class="author-name">By ' . $row['author'] . '</p>';
-            echo '<h3 class="book-price">Price: ' . $row['price'] . '$</h3>';
-            echo '<button><a href="addtocart.php?id=' . $row['id'] . '" class="add-to-cart-button">Add to Cart</a></button>';
-            echo '</div>';
-        }
-        echo '</div>'; // Close best-books-grid
-
-        echo '<div class="see-more-button">';
-        echo '<a href="morebooks.php?category=' . $category . '">See More</a>';
-        echo '</div>';
-
-        echo '</div>'; // Close category-books
+    echo '<div class="best-books-grid">';
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo '<div class="book-item">';
+      echo '<img src="' . $row['image'] . '" alt="' . $row['title'] . '">';
+      echo '<h3 class="book-title">' . $row['title'] . '</h3>';
+      echo '<p class="author-name">By ' . $row['author'] . '</p>';
+      echo '<h3 class="book-price">Price: ' . $row['price'] . '$</h3>';
+      echo '<button><a href="shopping_cart.php?id=' . $row['id'] . '" class="add-to-cart-button">Add to Cart</a></button>';
+      echo '</div>';
     }
+    echo '</div>'; // Close best-books-grid
 
-    mysqli_close($conn);
-    ?>
+    echo '<div class="see-more-button">';
+    echo '<a href="morebooks.php?category=' . $category . '">See More</a>';
+    echo '</div>';
+
+    echo '</div>'; // Close category-books
+  }
+
+  mysqli_close($conn);
+  ?>
+</section>
 
 
 
