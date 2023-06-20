@@ -106,6 +106,37 @@
 }
 
 
+
+
+
+
+
+.video-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.video-container {
+  flex-basis: 20%;
+  max-width: 20%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    flex-basis: 40%;
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
 /*Footer suru koresi colcor= #08a192 */
 
 
@@ -409,6 +440,39 @@ footer .end span{
 
 
 
+<!--vidwo-->
+
+
+
+
+
+
+<section id="video-review">
+
+  <h2 style="font-size: 28px" >Video Review</h2>
+
+  <div class="video-wrapper">
+    <div class="video-container">
+      <iframe width="280" height="157" src="https://www.youtube.com/embed/ok9MKt7gpNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-container">
+      <iframe width="280" height="157" src="https://www.youtube.com/embed/vQZRuWS0rE4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-container">
+      <iframe width="280" height="157" src="https://www.youtube.com/embed/lclue5ny6ik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-container">
+      <iframe width="280" height="157" src="https://www.youtube.com/embed/nXPSurPBBUg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-container">
+      <iframe width="280" height="157" src="https://www.youtube.com/embed/SzkBN8FUnWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 
 
 <!--Fotter-->
