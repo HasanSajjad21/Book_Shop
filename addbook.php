@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Online Bookshop - Add Book</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -149,9 +154,64 @@
         <!-- Other sections and content of your website -->
     </main>
 
-    <footer>
-        <!-- Your footer content here -->
+    <section>
+          <footer>
+        <div class="footer_main">
+
+            <div class="tag">
+                <img src="image/Screenshot 2023-06-19 115255.png">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est quaerat ipsa aspernatur ad 
+                    sequi, dolore eveniet vitae quasi. Excepturi ipsa odio impedit sequi at hic velit, minus 
+                    vero sint. Voluptas?
+                </p>
+
+            </div>
+
+            <div class="tag">
+                <h1>Quick Link</h1>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Featured</a>
+                <a href="#">Arrivals</a>
+                <a href="#">Reviews</a>
+                <a href="#">Blog</a>
+                
+            </div>
+
+            <div class="tag">
+                <h1>Contact Info</h1>
+                <a href="#"><i class="fa-solid fa-phone"></i>+014566666668</a>
+                <a href="#"><i class="fa-solid fa-phone"></i>+012345678910</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i>storykeeper123@gmail.com</a>
+                
+            </div>
+
+            <div class="tag">
+                <h1>Follow Us</h1>
+                <div class="social_link">
+                    <i class="fas fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                
+            </div>
+
+            <div class="tag">
+                <h1>Newsletter</h1>
+                <div class="search_bar">
+                    <input type="text" placeholder="You email id here">
+                    <button type="submit">Subscribe</button>
+                </div>                
+            </div>            
+            
+        </div>
+
+        <p class="end">Design By<span><i class="fa-solid fa-face-grin"></i> Sajjad and Reza</span></p>
+  </section>
     </footer>
+</section>
     <script>
         // JavaScript for displaying success message after form submission
         document.getElementById("add-book-form").addEventListener("submit", function(event) {

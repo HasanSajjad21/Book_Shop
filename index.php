@@ -253,11 +253,7 @@ footer .end span{
 <div class="header-2">
     <nav class="navbar">
         <a href="#home">home</a>
-        <a href="#catagoris">catagoris</a>
-        <a href="#featured">featured</a>
-        <a href="#arrivals">arrivals</a>
-        
-        <a href="#blogs">blogs</a>
+        <a href="#categories" onclick="scrollToSection('best-books-section')">categories</a>
     </nav>
 </div>
 

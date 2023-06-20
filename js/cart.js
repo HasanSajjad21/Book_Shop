@@ -96,3 +96,111 @@ function redirectToOrderPage() {
 // Add event listener to the checkout button
 const checkoutButton = document.getElementById('checkout-button');
 checkoutButton.addEventListener('click', redirectToOrderPage);
+function continueShopping() {
+  window.location.href = "index.php";
+}
+
+// Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the required elements
+  var deleteButton = document.getElementById('delete-button');
+  var productCheckboxes = document.getElementsByClassName('product-checkbox');
+  var checkoutButton = document.getElementById('checkout-button');
+
+  // Attach event listeners
+  for (var i = 0; i < productCheckboxes.length; i++) {
+    productCheckboxes[i].addEventListener('change', updateDeleteButtonState);
+  }
+
+  deleteButton.addEventListener('click', deleteSelectedItems);
+  checkoutButton.addEventListener('click', checkout);
+
+  // Update the total amount
+  updateTotal();
+});
+
+// Update the total amount
+function updateTotal() {
+  var totalAmount = 0;
+  var selectedProducts = {};
+
+  var quantityInputs = document.getElementsByClassName('quantity-input');
+  var priceCells = document.querySelectorAll('.cart-item td:nth-child(4)');
+  var productCheckboxes = document.getElementsByClassName('product-checkbox');
+
+  for (var i = 0; i < productCheckboxes.length; i++) {
+    if (productCheckboxes[i].checked) {
+      var rowIndex = Array.from(productCheckboxes[i].closest('tr').parentElement.children).indexOf(productCheckboxes[i].closest('tr'));
+      var quantity = parseInt(quantityInputs[rowIndex].value);
+      var price = parseFloat(priceCells[rowIndex].innerText);
+      var bookId = productCheckboxes[i].getAttribute('data-book-id');
+
+      if (selectedProducts[bookId]) {
+        selectedProducts[bookId].quantity += quantity;
+      } else {
+        selectedProducts[bookId] = {
+          quantity: quantity,
+          price: price
+        };
+      }
+    }
+  }
+
+  for (var bookId in selectedProducts) {
+    var bookQuantity = selectedProducts[bookId].quantity;
+    var bookPrice = selectedProducts[bookId].price;
+    totalAmount += bookQuantity * bookPrice;
+  }
+
+  document.getElementById('total-amount').innerText = '$' + totalAmount.toFixed(2);
+
+  updateDeleteButtonState();
+}
+
+// Update the delete button state
+// Delete selected items
+function deleteSelectedItems() {
+var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
+
+for (var i = 0; i < selectedProducts.length; i++) {
+var row = selectedProducts[i].closest('tr');
+var cartItemId = row.getAttribute('data-book-id');
+
+// Send an AJAX request to delete the item from the database
+deleteCartItem(cartItemId);
+
+// Remove the row from the table
+row.parentNode.removeChild(row);
+}
+
+updateTotal();
+}
+
+// Function to delete the item from the database using AJAX
+function deleteCartItem(cartItemId) {
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'delete_cart_item.php', true);
+xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+xhr.onreadystatechange = function () {
+if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+  console.log('Item deleted successfully.');
+}
+};
+xhr.send('cartItemId=' + encodeURIComponent(cartItemId));
+}
+
+
+// Checkout function
+function checkout() {
+  var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
+  var selectedProductNames = [];
+
+  for (var i = 0; i < selectedProducts.length; i++) {
+    var row = selectedProducts[i].closest('tr');
+    var productName = row.querySelector('td:nth-child(2)').innerText;
+    selectedProductNames.push(productName);
+  }
+
+  // Perform the checkout action
+  console.log('Checkout:', selectedProductNames.join(', '));
+}

@@ -1,3 +1,24 @@
+<?php
+include("connect.php");
+
+// Check if form is submitted for deleting items
+// Check if form is submitted for deleting items
+if (isset($_POST['delete-items'])) {
+  if (isset($_POST['selected-items'])) {
+    $selectedItems = $_POST['selected-items'];
+
+    // Convert the selected items array into a string of comma-separated values
+    $selectedItemsString = implode(',', $selectedItems);
+
+    // Delete selected items from the cart table
+    $deleteQuery = "DELETE FROM cart WHERE id IN ($selectedItemsString)";
+    $conn->query($deleteQuery);
+  }
+}
+
+
+// Rest of the code...
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +37,7 @@
     .shopping-cart-table tr.selected {
       background-color: #f2f2f2;
     }
+    
   </style>
 </head>
 <body>
@@ -23,7 +45,9 @@
     <h1>My Shopping Cart</h1>
     <div class="total-section">
       <span id="total-amount">No product</span>
-      <button id="delete-button" class="delete-button" disabled>Delete Item</button>
+      <form id="delete-items-form" method="POST" action="">
+      <button id="delete-button" class="delete-button" name="delete-items" type="submit" disabled>Delete Item</button>
+      </form>
     </div>
   </header>
 
@@ -84,7 +108,7 @@
               </td>
               <td>' . $bookPrice . '</td>
               <td>
-                <input type="checkbox" class="product-checkbox" data-cart-id="' . $cartItemId . '">
+              <input type="checkbox" class="product-checkbox" name="selected-items[]" value="' . $cartItemId . '">
               </td>
             </tr>';
           }
@@ -104,102 +128,113 @@
   </main>
 
   <script>
-    // Continue shopping button event handler
-    function continueShopping() {
-      window.location.href = "index.php";
-    }
-    
-    // Wait for the DOM to load
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get the required elements
-      var deleteButton = document.getElementById('delete-button');
-      var productCheckboxes = document.getElementsByClassName('product-checkbox');
-      var checkoutButton = document.getElementById('checkout-button');
+   // Wait for the DOM to load
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the required elements
+  var deleteButton = document.getElementById('delete-button');
+  var productCheckboxes = document.getElementsByClassName('product-checkbox');
+  var checkoutButton = document.getElementById('checkout-button');
+  var deleteItemsForm = document.getElementById('delete-items-form'); // Add this line
 
-      // Attach event listeners
-      for (var i = 0; i < productCheckboxes.length; i++) {
-        productCheckboxes[i].addEventListener('change', updateDeleteButtonState);
+  // Attach event listeners
+  for (var i = 0; i < productCheckboxes.length; i++) {
+    productCheckboxes[i].addEventListener('change', updateDeleteButtonState);
+  }
+
+  deleteButton.addEventListener('click', deleteSelectedItems);
+  checkoutButton.addEventListener('click', checkout);
+
+  // Update the total amount
+  updateTotal();
+});
+
+// Update the total amount
+function updateTotal() {
+  var totalAmount = 0;
+  var selectedProducts = {};
+
+  var quantityInputs = document.getElementsByClassName('quantity-input');
+  var priceCells = document.querySelectorAll('.cart-item td:nth-child(4)');
+  var productCheckboxes = document.getElementsByClassName('product-checkbox');
+
+  for (var i = 0; i < productCheckboxes.length; i++) {
+    if (productCheckboxes[i].checked) {
+      var rowIndex = Array.from(productCheckboxes[i].closest('tr').parentElement.children).indexOf(productCheckboxes[i].closest('tr'));
+      var quantity = parseInt(quantityInputs[rowIndex].value);
+      var price = parseFloat(priceCells[rowIndex].innerText);
+      var bookId = productCheckboxes[i].getAttribute('data-book-id');
+
+      if (selectedProducts[bookId]) {
+        selectedProducts[bookId].quantity += quantity;
+      } else {
+        selectedProducts[bookId] = {
+          quantity: quantity,
+          price: price
+        };
       }
-
-      deleteButton.addEventListener('click', deleteSelectedItems);
-      checkoutButton.addEventListener('click', checkout);
-
-      // Update the total amount
-      updateTotal();
-    });
-
-    // Update the total amount
-    function updateTotal() {
-      var totalAmount = 0;
-      var selectedProducts = {};
-
-      var quantityInputs = document.getElementsByClassName('quantity-input');
-      var priceCells = document.querySelectorAll('.cart-item td:nth-child(4)');
-      var productCheckboxes = document.getElementsByClassName('product-checkbox');
-
-      for (var i = 0; i < productCheckboxes.length; i++) {
-        if (productCheckboxes[i].checked) {
-          var rowIndex = Array.from(productCheckboxes[i].closest('tr').parentElement.children).indexOf(productCheckboxes[i].closest('tr'));
-          var quantity = parseInt(quantityInputs[rowIndex].value);
-          var price = parseFloat(priceCells[rowIndex].innerText);
-          var bookId = productCheckboxes[i].getAttribute('data-book-id');
-
-          if (selectedProducts[bookId]) {
-            selectedProducts[bookId].quantity += quantity;
-          } else {
-            selectedProducts[bookId] = {
-              quantity: quantity,
-              price: price
-            };
-          }
-        }
-      }
-
-      for (var bookId in selectedProducts) {
-        var bookQuantity = selectedProducts[bookId].quantity;
-        var bookPrice = selectedProducts[bookId].price;
-        totalAmount += bookQuantity * bookPrice;
-      }
-
-      document.getElementById('total-amount').innerText = '$' + totalAmount.toFixed(2);
-
-      updateDeleteButtonState();
     }
+  }
 
-    // Update the delete button state
-    function updateDeleteButtonState() {
-      var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
-      var deleteButton = document.getElementById('delete-button');
+  for (var bookId in selectedProducts) {
+    var bookQuantity = selectedProducts[bookId].quantity;
+    var bookPrice = selectedProducts[bookId].price;
+    totalAmount += bookQuantity * bookPrice;
+  }
 
-      deleteButton.disabled = selectedProducts.length === 0;
-    }
+  document.getElementById('total-amount').innerText = '$' + totalAmount.toFixed(2);
 
-    // Delete selected items
-    function deleteSelectedItems() {
-      var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
+  updateDeleteButtonState();
+}
 
-      for (var i = 0; i < selectedProducts.length; i++) {
-        var row = selectedProducts[i].closest('tr');
-        row.parentNode.removeChild(row);
-      }
+// Update the delete button state
+function updateDeleteButtonState() {
+  var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
+  var deleteButton = document.getElementById('delete-button');
 
-      updateTotal();
-    }
+  deleteButton.disabled = selectedProducts.length === 0;
+}
 
-    // Checkout function
-    function checkout() {
-      var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
-      var selectedProductNames = [];
+// Delete selected items
+function deleteSelectedItems() {
+  var selectedItems = [];
+  var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
 
-      for (var i = 0; i < selectedProducts.length; i++) {
-        var row = selectedProducts[i].closest('tr');
-        var productName = row.querySelector('td:nth-child(2)').innerText;
-        selectedProductNames.push(productName);
-      }
+  for (var i = 0; i < selectedProducts.length; i++) {
+    var cartItemId = selectedProducts[i].value;
+    selectedItems.push(cartItemId);
+  }
 
-      // Perform the checkout action
-      console.log('Checkout:', selectedProductNames.join(', '));
-    }
+  // Perform the delete action
+  console.log('Delete Items:', selectedItems);
+
+  // Create a hidden input element for each selected item ID
+  selectedItems.forEach(function(itemId) {
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'selected-items[]';
+    input.value = itemId;
+    deleteItemsForm.appendChild(input);
+  });
+
+  // Submit the form
+  deleteItemsForm.submit();
+}
+
+// Checkout function
+function checkout() {
+  var selectedProducts = document.querySelectorAll('.cart-item input.product-checkbox:checked');
+  var selectedProductNames = [];
+
+  for (var i = 0; i < selectedProducts.length; i++) {
+    var row = selectedProducts[i].closest('tr');
+    var productName = row.querySelector('td:nth-child(2)').innerText;
+    selectedProductNames.push(productName);
+  }
+
+  // Perform the checkout action
+  console.log('Checkout:', selectedProductNames.join(', '));
+}
+
   </script>
   <script src="js/cart.js"></script>
 </body>
