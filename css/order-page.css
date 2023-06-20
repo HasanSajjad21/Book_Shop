@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#order-details {
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.product-details {
+  margin-bottom: 20px;
+}
+
+.product-details table {
+  width: 100%;
+}
+
+.product-details table td {
+  padding: 5px;
+}
+
+.product-details .product-image {
+  max-width: 100px;
+  height: auto;
+}
+
+.product-details .product-name {
+  font-weight: bold;
+}
+
+.user-details {
+  margin-top: 20px;
+}
+
+.user-details table {
+  width: 100%;
+}
+
+.user-details table td {
+  padding: 5px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}

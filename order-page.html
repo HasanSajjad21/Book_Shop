@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Page</title>
+  <!-- Add your CSS stylesheets and JavaScript files -->
+  <link rel="stylesheet" href="css/order-page.css">
+  <style>
+    /* Add your custom styles for the order page */
+  </style>
+</head>
+<body>
+  <h1>Order Details</h1>
+
+  <div id="order-details">
+    <!-- Display the selected product details and total amount here -->
+  </div>
+
+  <h2>User Details</h2>
+  <form id="user-details-form">
+    <div>
+      <label for="username">User Name:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required>
+    </div>
+    <div>
+      <label for="present-address">Present Address:</label>
+      <input type="text" id="present-address" name="present-address" required>
+    </div>
+    <div>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="phone-number">Phone Number:</label>
+      <input type="tel" id="phone-number" name="phone-number" required>
+    </div>
+    <button type="submit" id="payment-button">Make Payment</button>
+  </form>
+
+  <script src="js/order-page.js"></script>
+</body>
+</html>

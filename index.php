@@ -294,10 +294,13 @@ footer .end span{
 
 
     <!--catagori suru korlam-->
+
+
     <section id="categories">
         <div class="container">
             <h2>Categories</h2>
             <div class="category-slider">
+
                 <div class="category-item">
                     <img src="cat-img/rel.jpg" alt="catefory 1">
                     <h3>Relagious</h3>
@@ -307,10 +310,7 @@ footer .end span{
                     <h3>Most Popular</h3>
                 </div>
                 <!-- Add more category items as needed -->
-                <div class="category-item">
-                    <img src="cat-img/aca.jpg" alt="Category 3">
-                    <h3>Academic & Education</h3>
-                </div>
+              
                 <div class="category-item">
                     <img src="cat-img/art.jpg" alt="Category 4">
                     <h3>Art</h3>
@@ -429,6 +429,13 @@ footer .end span{
 
     mysqli_close($conn);
     ?>
+
+
+
+
+
+
+
 <!--Fotter-->
 
 

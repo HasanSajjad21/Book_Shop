@@ -1,0 +1,136 @@
+/* Styles for the header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0A4D68;
+  }
+  
+  header h1 {
+    color: #fff;
+    font-size: 30px;
+  }
+  
+  .total-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .total-section button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  @keyframes seaWaves {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  #total-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #4caf50;
+    border-radius: 4px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    animation: seaWaves 3s infinite;
+  }
+  
+  
+ 
+  
+  /* Styles for the main section */
+
+  .shopping-cart-table {
+    
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+    table-layout: fixed; /* Fix the table layout */
+    border-collapse: collapse;
+    background-color: rgb(211, 231, 231);
+  }
+  
+  @media (max-width: 768px) {
+    .shopping-cart-table {
+      width: 100%; /* Adjust the width for smaller screens */
+    }
+  }
+  
+  .shopping-cart-table th,
+  .shopping-cart-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #5c5454;
+  }
+  
+  .shopping-cart-table th {
+    background-color: #088395;
+    color: #fff;
+  }
+  
+  .quantity-input {
+    width: 60px;
+    padding: 5px;
+  }
+  
+  .buttons-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .continue-shopping-button {
+    flex: 0 0 auto;
+    background-color: #4caf50;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .checkout-button {
+    flex: 0 0 auto;
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  
+  .shopping-cart-table td.image-cell {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+  }
+  
+  .shopping-cart-table td.image-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain the aspect ratio and cover the cell */
+  }
+  
+ 
+  
+
+  
+  
