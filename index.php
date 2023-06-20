@@ -369,38 +369,6 @@ footer .end span{
     </section>
 
 
-    <section class="featured-books-section">
-            <h2>Featured Books</h2>
-            <div class="books-container">
-                <?php
-                    include 'connect.php';
-
-                    $query = "SELECT * FROM books WHERE featured = 1";
-                    $result = mysqli_query($conn, $query);
-
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $bookId = $row['id'];
-                        $title = $row['title'];
-                        $author = $row['author'];
-                        $image = $row['image'];
-
-                        echo '<div class="book-card">';
-                        echo '<img src="' . $image . '" alt="' . $title . '">';
-                        echo '<h3 class="book-title">' . $title . '</h3>';
-                        echo '<p class="author-name">By: ' . $author . '</p>';
-                        echo '<form action="addtocart.php" method="post">';
-                        echo '<input type="hidden" name="book_id" value="' . $bookId . '">';
-                        echo '<button type="submit" class="add-to-cart" name="add_to_cart">Add to Cart</button>';
-                        echo '</form>';
-                        echo '</div>';
-                    }
-
-                    mysqli_close($conn);
-                ?>
-            </div>
-        </section>
-
-
 
 
 
